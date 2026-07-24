@@ -21,13 +21,26 @@ body{
 .nav-list a:hover {
  background-color:#575757;
 }
-.films{
+h1{
+  text-align: center;
+  color:#333
+}
+
+/* .films{
   background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 .background{
-  background-image: url();
+  background-image: url("starwarImg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+.planets{
+  background-image: url(planets.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.spaceships{
+  background-image: url('spaceships.avif');
 }
