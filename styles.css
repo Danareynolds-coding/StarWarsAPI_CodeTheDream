@@ -31,11 +31,11 @@ h1{
   background-repeat: no-repeat;
   background-size: cover;
 } */
-.background{
+/* .background{
   background-image: url("starwarImg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-}
+} */
 .planets{
   background-image: url(planets.webp);
   background-size: cover;
