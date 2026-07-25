@@ -1,23 +1,23 @@
-const display = document.querySelector('#vehicles')
+const listElem = document.getElementById('vehicles');
 
-const getVehicleData = async () => { 
+async function fetchAndDisplayVehicles() { 
+  const url = "https://swapi.dev/api/vehicles/";
   try{
-    const response = await fetch("https://swapi.dev/api/vehicles/");
+    const response = await fetch(url);
     if (!response.ok) {
              throw new Error('Network response was not ok');
          }
-        const data = await response.json
-        console.log(data)
+        const data = await response.json();
+        // console.log(data);
+        const htmlPayload = data.results.forEach(vehicles => {
+          listElem.insertAdjacentHTML('beforeend', `
+            <h3>${vehicles.name}</h3>
+            <p>Model:${vehicles.model}</p><p>Crew: ${vehicles.crew}</p>
+            <p>Pilots: ${vehicles.pilots}</p>
+          `);
+        })
   } catch (error) {
          console.error('Error:', error);
-  return data
  }
-const displayVehicles = async () => {
-  const vehicles = await getVehicleData()
-  console.log(vehicles);
-  let VehicleDisplay = vehicles.map(({name, model}) => {
-    `<li>${name} (${model}</li>`.join("");
-  display.innerHTML = VehicleDisplay;
-})
-};
-displayVehicles();
+}
+fetchAndDisplayVehicles();

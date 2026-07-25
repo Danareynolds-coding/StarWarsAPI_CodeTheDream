@@ -1,5 +1,6 @@
 body{
   margin:0;
+  padding:0;
 }
 .navbar{
   background-color:#333;
@@ -21,26 +22,46 @@ body{
 .nav-list a:hover {
  background-color:#575757;
 }
+
 h1{
   text-align: center;
-  color:#333
+  padding: 10px;
 }
 
-/* .films{
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-/* .background{
-  background-image: url("starwarImg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-.planets{
-  background-image: url(planets.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
+.user-card { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 4px; }
+.error { color: red; font-weight: bold; }
+
+
+.films{
+  padding:1%;
+  background-color:darkslategray;
+  color:white;
+  font-size: larger;
+  list-style-type: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.spaceships{
-  background-image: url('spaceships.avif');
+.films p {
+  font-size: smaller;
+  font-family:Arial, Helvetica, sans-serif, Courier, monospace;
+}
+
+button {
+  align-items: center;
+  margin-left:25%;
+  color:white;
+  background-color: navy;
+}
+.people{
+  background-color:lightblue; aquamarine;
+}
+#peopleContainer{
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  margin:1%;
+  padding:20px;
+  border-radius: 10px;
+  background-color: rgb(99, 173, 238);
+  color:navy;
+}
+.P-h1{
+  color:navy;
 }

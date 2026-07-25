@@ -1,22 +1,20 @@
 
 fetch("https://swapi.dev/api/species/")
-  .then(response =>  {
-    if (!response.ok){
-      throw new Error("Can not fetch.")
-    }
-  data = response.json()
-  return data
-})
-.then(data => {
-  const parsedData =JSON.parse(data)
-  data.forEach(file => {
-  const element =
-  `<h2>Name: ${data.name}</h2>
-   <p>Class: ${data.classification}</p>
-   <p>Homeworld:${data.language}</p>
-   <p>Charaters:${data.people}</p>`
-  document.querySelector('div').insertAdjacentHTML('beforeend', element)
-  })
-})
-.catch(error => console.log(error))
+    .then(response => {
+         if (!response.ok) {
+         throw new Error('Network response was not ok');
+         }
+    return response.json();
+    })
+  
+    .then(data => {
+        data.results.forEach(species => {
+            const markup = `<li><h3>Name:${species.name}</h3><p>Homeworld:${species.homeworld}</p><p>Designation:${species.designation}</p><p>Language: ${species.language}</p><p>Classification: ${species.classification}</p></li> ` ;
+            document.getElementById('species').
+            insertAdjacentHTML('beforeend', markup);
+            }
+            });
+        })
+    .catch (error => console.error('Error:', error));
+    
 

@@ -1,4 +1,5 @@
 const starshipsUrl = "https://swapi.dev/api/starships/"
+
 async function starshipsData() {
   try{
     const response = await fetch(starshipsUrl);
@@ -6,16 +7,14 @@ async function starshipsData() {
             throw new Error(`HTTP error! Status: ${response.status}`);
   }
     const data = await response.json();
-    const container = document.getElementById('starships');
-    container.innerHTML = "";
-    data.forEach(item => {
-      console.log(item)
-      const listItem =`${starship.name}Model:${starship.model}-Pilots:${starship.pilots}`
-      container.appendChild(listItem);
+    .then(data => {
+      data.results.forEach(item => {
+      `${item.name}-Model:${item.model}-Pilots:${item.pilots.length}`
     });
+    }) 
+    
 }catch (error){
-  console.log(error)
+  console.error("failed", error)
 }
- 
 }
 starshipsData();

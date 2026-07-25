@@ -1,36 +1,13 @@
-const getFilms = async () => {
-    const response = await fetch("https://swapi.dev/api/films/");
-    .then(resonse => {
-    if (!response.ok) {
-             throw new Error('Network response was not ok');
-         }
-const data = await response.json();
-console.log(data);{
-        }
-    catch (error) {
-         console.error('Error:', error);
-  return data
- };
-}
-getFilms()
- 
-// const render = (films) => {
-// return films.map(({title, director}) => `<li>${title} (${director})</li>`).join('');
-//  };
-// (async () => {
-// const loadingElem = document.querySelector('#loading');
-// loadingElem.innerHTML = 'Loading...';
-// const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-// await delay(2000); // delay 2 seconds
-// try {
-// const films = await Films();
-// document.querySelector('#content').innerHTML = `<ul>${render(films)}</ul>`;
-// } catch (err) {document.querySelector('#message').textContent = err.message;
-// } finally {
-// loadingElem.innerHTML = '';
-// }
-// });
+const listElem = document.getElementById('films');
+console.log('Target element:', listElem); 
 
-
-
+fetch('https://swapi.dev/api/films/')
+    .then(response => response.json())
+    .then (data => {
+        console.log('Data payload:', data);
+        data.results.forEach(film => {
+        listElem.insertAdjacentHTML('beforeend', `<li>${film.title} (${film.director}) <p>Episode:${film.episode_id}</p><p>film.${film.opening_crawl}</p></li>`);
+        })
+    })
+    .catch(error => console.error('Error fetching', error))
 
