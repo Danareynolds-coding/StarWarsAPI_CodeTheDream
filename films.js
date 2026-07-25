@@ -1,15 +1,18 @@
 const getFilms = async () => {
-const response = await fetch("https://swapi.dev/api/films/");
+    const response = await fetch("https://swapi.dev/api/films/");
+    .then(resonse => {
     if (!response.ok) {
              throw new Error('Network response was not ok');
          }
-const films = await response.json();
-console.log(films);
-} catch (error) {
+const data = await response.json();
+console.log(data);{
+        }
+    catch (error) {
          console.error('Error:', error);
-  return films
+  return data
  };
-
+}
+getFilms()
  
 // const render = (films) => {
 // return films.map(({title, director}) => `<li>${title} (${director})</li>`).join('');
