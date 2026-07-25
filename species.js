@@ -4,17 +4,19 @@ fetch("https://swapi.dev/api/species/")
     if (!response.ok){
       throw new Error("Can not fetch.")
     }
-  return response.json()
+  data = response.json()
+  return data
 })
 .then(data => data.forEach(data => {
-  //const arrayObject = JSON.parse(data.data)
-  //arrayObject.forEach(file => {
+  const arrayObject = JSON.parse(data.data)
+  arrayObject.forEach(file => {
   const element =
   `<h2>Name: ${data.name}</h2>
    <p>Class: ${data.classification}</p>
    <p>Homeworld:${data.language}</p>
    <p>Charaters:${data.people}</p>`
   document.querySelector('div').insertAdjacentHTML('beforeend', element)
+})
 }))
 .catch(error => console.log(error))
 
