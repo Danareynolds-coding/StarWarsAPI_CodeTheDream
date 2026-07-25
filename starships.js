@@ -1,31 +1,21 @@
-//fetchData();
-
-async function fetchData() {
-    try {
-        const response = await fetch("https://swapi.dev/api/starships/")
-        if (!response.ok) {
-             throw new Error('Network response was not ok');
-         }
-        const data = await response.json();
-        console.log(data);
-     } catch (error) {
-         console.error('Error:', error);
-     }
- }
-
-
-// const display = document.querySelector('#spaceships') 
-// const displaySpaceships = async () => {
-// const payload = await fetchData()
-//   console.log(payload);
-// let VehicleDisplay = payload.map((object) => {
-//     const{name, model} = object
-//     return
-//     `<div class="container">
-//     <p>Name: ${name}</p>
-//     <p>Model: ${model}</p>
-//     </div>`
-//   }).join("");
-//   display.innerHTML = VehicleDisplay
-// }
-// displayVehicles()
+const starshipsUrl = "https://swapi.dev/api/starships/"
+async function starshipsData() {
+  try{
+    const response = await fetch(starshipsUrl);
+    if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+    const data = await response.json();
+    const container = document.getElementById('starships');
+    container.innerHTML = "";
+    data.forEach(item => {
+      console.log(item)
+      const listItem =`${starship.name}Model:${starship.model}-Pilots:${starship.pilots}`
+      container.appendChild(listItem);
+    });
+}catch (error){
+  console.log(error)
+}
+ 
+}
+starshipsData();
