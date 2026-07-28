@@ -1,3 +1,7 @@
+
+    
+  
+
 const loadButton = document.getElementById('loadButton');
 const container = document.getElementById('peopleContainer'); 
 loadButton.addEventListener('click', fetchPeople);

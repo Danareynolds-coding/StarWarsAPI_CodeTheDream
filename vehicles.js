@@ -11,9 +11,11 @@ async function fetchAndDisplayVehicles() {
         // console.log(data);
         const htmlPayload = data.results.forEach(vehicles => {
           listElem.insertAdjacentHTML('beforeend', `
+            <li class="list">
             <h3>${vehicles.name}</h3>
             <p>Model:${vehicles.model}</p><p>Crew: ${vehicles.crew}</p>
             <p>Pilots: ${vehicles.pilots}</p>
+            </li>
           `);
         })
   } catch (error) {

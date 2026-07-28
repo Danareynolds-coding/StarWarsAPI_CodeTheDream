@@ -13,7 +13,7 @@ async function fetchSpecies() {
       const speciesDiv = document.createElement('div');
       speciesDiv.className = "species-card";
       if (!null){
-      speciesDiv.innerHTML = `<div><h3>Name:${species.name}</h3><p>Homeworld:${species.homeworld}</p><p>Designation:${species.designation}</p><p>Language: ${species.language}</p><p>Classification: ${species.classification}</p></div> ` 
+      speciesDiv.innerHTML = `<div><h3>${species.name}</h3><p>Homeworld:${species.homeworld}</p><p>Designation:${species.designation}</p><p>Language: ${species.language}</p><p>Classification: ${species.classification}</p></div> ` 
       container.appendChild(speciesDiv);
     };
   });

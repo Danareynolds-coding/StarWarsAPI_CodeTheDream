@@ -1,0 +1,57 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+.navbar{
+  background-color:#333;
+  padding: 0 20px;
+}
+.nav-list{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  display:flex;
+}
+.nav-list a {
+  display:block;
+  color:white;
+  text-align: center;
+  padding:14px 20px;
+  text-decoration: none;
+}
+.nav-list a:hover {
+ background-color:#575757;
+}
+body{
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(to right, lightblue,rgb(0, 213, 255), blue,red );
+  }
+.onePerson-card { 
+  width:400px;
+  background-color:cadetblue;
+  padding: 15px; margin: 10px 0; 
+  border-radius: 5px; border-left: 5px solid navy; }
+
+button {
+  border-radius: 10px;
+  margin:1rem;
+  text-align: center;
+  padding:1rem;
+  color:white;
+  background-color: navy;
+}
+input{
+  margin-left:1rem;
+  background-color:rgb(140, 230, 234);
+  color:navy;
+  padding:10px;
+  border-radius: 5px;
+  border:3px solid red;
+}
+h2{
+  color:Navy;
+  text-align:center;
+  margin:1rem;
+}
