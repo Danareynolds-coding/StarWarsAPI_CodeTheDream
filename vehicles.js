@@ -1,4 +1,3 @@
-const listElem = document.getElementById('vehicles');
 
 async function fetchAndDisplayVehicles() { 
   const url = "https://www.swapi.tech/api/vehicles/";
@@ -8,16 +7,21 @@ async function fetchAndDisplayVehicles() {
              throw new Error('Network response was not ok');
          }
         const data = await response.json();
-        // console.log(data);
-        const htmlPayload = data.results.forEach(vehicles => {
+        const listElem = document.getElementById('vehicles');
+        
+        for(const item of data.results) {
+          const vehicleRes = await fetch(item.url);
+          const vehicleData = await vehicleRes.json()
+          const vehicles = vehicleData.result.properties;
+
           listElem.insertAdjacentHTML('beforeend', `
-            <li class="list">
+          <li class="list">
             <h3>${vehicles.name}</h3>
             <p>Model:${vehicles.model}</p><p>Crew: ${vehicles.crew}</p>
             <p>Pilots: ${vehicles.pilots}</p>
-            </li>
+          </li>
           `);
-        })
+        }
   } catch (error) {
          console.error('Error:', error);
  }
