@@ -1,7 +1,7 @@
 const listElem = document.getElementById('vehicles');
 
 async function fetchAndDisplayVehicles() { 
-  const url = "https://swapi.dev/api/vehicles/";
+  const url = "https://www.swapi.tech/api/vehicles/";
   try{
     const response = await fetch(url);
     if (!response.ok) {

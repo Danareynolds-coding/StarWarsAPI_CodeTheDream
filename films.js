@@ -1,13 +1,31 @@
-const listElem = document.getElementById('films');
-console.log('Target element:', listElem); 
-
-fetch('https://swapi.dev/api/films/')
-    .then(response => response.json())
-    .then (data => {
-        console.log('Data payload:', data);
-        data.results.forEach(film => {
-        listElem.insertAdjacentHTML('beforeend', `<li>${film.title} (${film.director}) <p>Episode:${film.episode_id}</p><p>film.${film.opening_crawl}</p></li>`);
-        })
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+fetch("https://www.swapi.tech/api/films/")
+    .then(response => {
+        if (!response.ok) {
+         throw new Error('Network response was not ok');
+        }
+    return response.json();
     })
-    .catch(error => console.error('Error fetching', error))
-
+    .then(data => {
+        return wait(1000).then(() => {
+          data.results.forEach(item => {
+            fetch(item.url)
+                .then(res => res.json()) 
+                .then(filmData => {
+                const films = filmData.result.properties;
+                const markup =
+                `<li>
+                    <h3>${films.title}</h3>
+                    <p>Director: (${films.director})</p>
+                    <p>Episode:${films.episode_id}</p>                  
+                    <p>${films.opening_crawl}</p>
+                </li>`;
+                document.getElementById('films').insertAdjacentHTML('beforeend', markup);
+                });
+        });
+    });
+})
+  
+.catch(error => console.error('Error fetching', error));
