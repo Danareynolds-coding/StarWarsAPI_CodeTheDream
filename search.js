@@ -1,4 +1,7 @@
-async function getFilm() {
+const myButton = document.getElementById("film-btn");
+  myButton.addEventListener("click", getFilm);
+
+  async function getFilm() {
   const title = document.getElementById('film').value;
   const oneFilmContainer = document.getElementById('oneFilmContainer');
   oneFilmContainer.innerHTML = "<p>Searching</p>";
@@ -38,7 +41,7 @@ try{
         <p>Release Date: ${props.release_date}</p>
         <h3>Characters:</h3>
         <ul>
-          ${charactersNames.map(name => `<li>${name}</li>`).join("")}
+          ${characterNames.map(name => `<li>${name}</li>`).join("")}
         </ul>    `;
             oneFilmContainer.appendChild(card);
           }
