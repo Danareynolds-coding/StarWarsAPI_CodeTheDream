@@ -8,7 +8,7 @@ async function fetchSpecies() {
   }
     const data = await response.json();
     container.innerHTML ='';
-    //because of empty container, it wont let me use for each loop.
+    //async does not support for each loop.
       for (const item of data.results) {
       const res = await fetch(item.url);
       const speciesData = await res.json();

@@ -33,6 +33,10 @@ body{
     color:navy;
     
   }
+   ul li{
+    list-style-type: none;
+
+  }
   .oneFilm-card { 
   background-color:rgb(223, 161, 161);
   width:100%;

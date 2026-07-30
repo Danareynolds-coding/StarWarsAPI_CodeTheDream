@@ -11,8 +11,7 @@ async function fetchStarships() {
   }
     const data = await response.json();
     container.innerHTML ='';
-    //because of empty container, it wont let me use for each loop so using for.
-      for (const item of data.results){
+    for (const item of data.results){
       const res = await fetch(item.url);
       const starshipData = await res.json();
       const starships = starshipData.result.properties;
