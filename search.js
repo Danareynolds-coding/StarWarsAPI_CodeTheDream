@@ -1,5 +1,5 @@
 const button = document.getElementById("film-btn");
-  button.addEventListener("click", getFilm);
+button.addEventListener("click", getFilm);
 
   async function getFilm() {
   const title = document.getElementById('film').value;

@@ -17,7 +17,7 @@
 
 ### The vehicles page is also async functions.Basicly the same as the others.
 
-### The Search pages are beyond my skill I was only able to get the requested info on the top, not by its self. I will try to rectify this before Aug 16th.
+### The Search pages are beyond my skill I was only able to get the requested info on the top, not by its self.  My attempts to get person also failed. I tried a lot of different ways but could not figue it out. I will keep trying if I have time Aug 16th.
 
 ## User Instrution: All the pages are self loading except the people page which requires a simple button push. The button push: If You want to get a specific information you can use the lable to call a certain peice of data. For example type in Luke Skywalker to pull up his information. The initial limit to the Starwars API is 10 , so You will only get the first 10. There is a way to get the other pages but 10 seems sufficent. *Note with this App as with all API Apps there is a slight delay while the fetch is being called. 
 
