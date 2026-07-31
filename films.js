@@ -9,7 +9,6 @@ async function getFilms() {
         container.innerHTML ="";
         for(const item of data.result){
             const films = item.properties;
-
             const filmsDiv = document.createElement('div');
             filmsDiv.className = "films-card";
             filmsDiv.innerHTML = `
