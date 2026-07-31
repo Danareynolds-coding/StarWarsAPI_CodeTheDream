@@ -21,7 +21,6 @@ try{
 
     for(const film of data.result) {
       const props = film.properties;
-
       const characterPromises = props.characters.map(charURL =>
         fetch(charURL)
         .then(res => res.json())
